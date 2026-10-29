@@ -1,0 +1,12 @@
+{
+  "PS-O3": {
+    "num_items": 5,
+    "values": [10, 4, 7, 5, 8],
+    "weights": [5, 3, 4, 2, 6],
+    "capacity": 15,
+    "slack_encoding": "binary slack s = s0 + 2 s1 + 4 s2 + 8 s3 (range 0..15), qubits 5..8",
+    "reference_penalty_P": 5,
+    "v_star": 26,
+    "opt_bitstring": "11110"
+  }
+}
