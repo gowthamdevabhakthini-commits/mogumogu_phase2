@@ -1,0 +1,5 @@
+Paradigm,Strategy,Value,P(Feasible),P(Opt),Depth
+Uniform Random,Random Bits,20.1,0.875,0.031,0
+Classical Heuristic,Greedy Ratio (v/w),22.0,1.0,0.0,0
+Static Quantum,QAOA (Unoptimized),22.0,0.85,0.032,41
+Hardware Co-Designed,QAOA + COBYLA (Proc D),26.0,0.958,0.091,41

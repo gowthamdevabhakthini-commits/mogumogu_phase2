@@ -1,0 +1,6 @@
+problem_id,processor,condition,executable,logical_qubits,physical_qubits,logical_cx,cx,depth,two_q_depth,swaps,cx_overhead,shots,quality_metric,quality_value,p_opt,classical_optimum,random_baseline
+PS-O3,A,ideal,false,9,5,,,,,,,4096,p_feasible,,,26,0.875
+PS-O3,Processor B,ideal,true,9,9,72,121,117,79,17,49,4096,p_feasible,0.8506,0.0386,26,0.875
+PS-O3,Processor B,noisy,true,9,9,72,121,117,79,17,49,4096,p_feasible,0.8457,0.0381,26,0.875
+PS-O3,Processor D,ideal,true,9,9,72,107,107,74,13,35,4096,p_feasible,0.8413,0.0388,26,0.875
+PS-O3,Processor D,noisy,true,9,9,72,107,107,74,13,35,4096,p_feasible,0.8257,0.0378,26,0.875
