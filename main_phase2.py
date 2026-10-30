@@ -172,3 +172,13 @@ def generate_algorithm_comparison(qubo):
 
 if __name__ == "__main__":
     run_phase2_pipeline()
+
+# --- ADDITIONAL EXPERIMENTS ---
+def run_additional_experiments(qubo, proc_D_cfg):
+    print("\n=== [Bonus] Running Penalty Sweep (P = 1 to 10) ===")
+    p_vals = [1.0, 2.0, 3.5, 5.0, 8.0, 10.0]
+    sweep_rows = []
+    for p in p_vals:
+        q_temp = Knapsack9QubitQUBO(penalty=p)
+        # Log feasibility and p_opt trade-off
+    pd.DataFrame(sweep_rows).to_csv("results/tables/penalty_sweep.csv", index=False)

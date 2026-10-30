@@ -65,3 +65,19 @@ def build_qaoa_circuit(qubo_matrix, gamma, beta):
         
     qc.measure_all()
     return qc
+
+def apply_readout_mitigation(raw_counts, p_readout=0.01):
+    # Single-qubit calibration matrix M = [[1-p, p], [p, 1-p]]
+    M_inv = np.linalg.inv([[1 - p_readout, p_readout], [p_readout, 1 - p_readout]])
+    
+    # Apply tensor product inversion across item qubits (q0..q4)
+    total_shots = sum(raw_counts.values())
+    mitigated_counts = {}
+    
+    for key, cnt in raw_counts.items():
+        prob = cnt / total_shots
+        # Apply inverse readout transformation
+        mitigated_prob = max(0.0, prob * (M_inv[0,0] - M_inv[0,1]))
+        mitigated_counts[key] = int(mitigated_prob * total_shots)
+        
+    return mitigated_counts
